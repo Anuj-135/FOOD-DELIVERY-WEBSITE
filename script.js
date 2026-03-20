@@ -22,6 +22,7 @@ const cartValue = document.querySelector('.cart-value');
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 const bars = document.querySelector('.fa-bars');
+const themeIcon = document.querySelector('.theme-icon');
 
 // Open cart tab
 cartIcon.addEventListener('click', () => {
@@ -31,6 +32,24 @@ cartIcon.addEventListener('click', () => {
 // Close cart tab
 closeBtn.addEventListener('click', () => {
   cartTab.classList.remove('cart-tab-active');
+});
+
+// Toggle dark / light theme
+const themeIconEl = themeIcon.querySelector('i');
+
+// Apply saved theme on load
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-mode');
+  themeIconEl.classList.replace('fa-moon', 'fa-sun');
+}
+
+themeIcon.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  themeIconEl.classList.toggle('fa-moon', !isDark);
+  themeIconEl.classList.toggle('fa-sun', isDark);
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
 // Toggle mobile menu
@@ -127,7 +146,7 @@ const addToCart = (product) => {
   const minusBtn = cartItem.querySelector('.minus');
   const quantityValue = cartItem.querySelector('.quantity-value');
   const itemTotal = cartItem.querySelector('.item-total');
-  
+
   plusBtn.addEventListener('click', (e) => {
     e.preventDefault();
     quantity++;
@@ -146,7 +165,7 @@ const addToCart = (product) => {
       itemTotal.textContent = `$${totalPrice}`;
       updateTotal();
     }
-    else{
+    else {
       cartItem.classList.add('slide-out');
       setTimeout(() => {
         cartItem.remove();
@@ -155,7 +174,7 @@ const addToCart = (product) => {
       }, 300);
     }
   });
-  
+
 }
 
 // Initialize app by fetching product data and displaying cards
