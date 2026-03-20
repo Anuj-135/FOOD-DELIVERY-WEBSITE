@@ -34,7 +34,7 @@ closeBtn.addEventListener('click', () => {
   cartTab.classList.remove('cart-tab-active');
 });
 
-// Toggle dark / light theme
+// Toggle dark / light theme (It changes the theme of the website)
 const themeIconEl = themeIcon.querySelector('i');
 
 // Apply saved theme on load
