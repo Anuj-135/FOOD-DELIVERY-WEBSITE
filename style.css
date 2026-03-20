@@ -502,7 +502,7 @@ body {
 }
 
 body.dark-mode {
-    --eye-ball: #000000;
+    --eye-ball: #1c1c1c;
     --hind-yellow: #16213e;
     --pure-white: #0f3460;
     --lead: #e0e0e0;
@@ -520,21 +520,25 @@ body.dark-mode .footer-link {
 }
 
 body.dark-mode header {
-    background-color: #000006;
+    background-color: var(--eye-ball);
 }
 
 body.dark-mode .mobile-menu {
-    background: #000000;
+    background: var(--eye-ball);
     border-color: #2a2a4a;
 }
 
 body.dark-mode .order-card {
-    background: #000000;
+    background: var(--eye-ball);
     border-color: var(--gold-finger);
 }
 
+body.dark-mode .order-card img {
+    filter: drop-shadow(rgba(255, 255, 255, 0.607) 0px 10px 10px);
+}
+
 body.dark-mode .cart-tab {
-    background: #000000;
+    background: var(--eye-ball);
 }
 
 body.dark-mode .cart-tab .btn {
@@ -550,7 +554,7 @@ body.dark-mode .cart-list .item:nth-child(even) {
 }
 
 body.dark-mode .app-container {
-    background: #000000;
+    background: var(--eye-ball);
 }
 
 body.dark-mode .footer-container {
