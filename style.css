@@ -498,7 +498,7 @@ input[type="email"]:focus {
 
 /* ===== Dark Mode ===== */
 body {
-    transition: background-color .4s ease, color .4s ease;
+    transition: background-color .8s ease, color .8s ease;
 }
 
 body.dark-mode {
@@ -517,10 +517,6 @@ body.dark-mode a {
 body.dark-mode p,
 body.dark-mode .footer-link {
     color: #a0a0b0;
-}
-
-body.dark-mode header {
-    background-color: var(--eye-ball);
 }
 
 body.dark-mode .mobile-menu {
@@ -554,7 +550,7 @@ body.dark-mode .cart-list .item:nth-child(even) {
 }
 
 body.dark-mode .app-container {
-    background: var(--eye-ball);
+    background: black;
 }
 
 body.dark-mode .footer-container {
